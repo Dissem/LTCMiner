@@ -12,7 +12,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import android.util.Log;
-import com.ltcminer.miner.R;
 
 public class Work {
 	private static final int DEFAULT_TIMEOUT = 10000; // ms

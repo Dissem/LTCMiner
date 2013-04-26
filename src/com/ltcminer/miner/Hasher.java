@@ -1,11 +1,11 @@
 package com.ltcminer.miner;
-import com.ltcminer.miner.R;
-import javax.crypto.Mac;
-import javax.crypto.spec.SecretKeySpec;
+import static java.lang.Integer.rotateLeft;
+import static java.lang.System.arraycopy;
+
 import java.security.GeneralSecurityException;
 
-import static java.lang.System.arraycopy;
-import static java.lang.Integer.rotateLeft;
+import javax.crypto.Mac;
+import javax.crypto.spec.SecretKeySpec;
 
 public class Hasher {
 	private Mac mac;

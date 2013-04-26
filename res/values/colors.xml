@@ -4,4 +4,7 @@
     <color name="red">#b22222</color>
     <color name="darkblue">#1e90ff</color>
     <color name="black">#000000</color>
+    <color name="silver">#c9d1d3</color>
+    <color name="bright">#f7f7f7</color>
+    <color name="dark">#3b3737</color>
 </resources>

@@ -1,6 +1,5 @@
 package com.ltcminer.miner;
 import java.io.IOException;
-import android.util.Log;
 import java.net.HttpURLConnection;
 import java.net.SocketTimeoutException;
 import java.net.URL;
@@ -10,8 +9,6 @@ import java.util.Observable;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.locks.LockSupport;
 
-import com.ltcminer.miner.Work;
-import com.ltcminer.miner.R;
 import android.util.Log;
 
 public class Worker extends Observable implements Runnable {

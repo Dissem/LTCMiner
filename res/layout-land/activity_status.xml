@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center_horizontal|left"
+    android:padding="16dp" >
+
+    <LinearLayout
+        android:id="@+id/speedbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/second_box"
+        android:layout_alignRight="@+id/second_box"
+        android:layout_marginBottom="16dp"
+        android:background="@color/silver"
+        android:orientation="vertical"
+        android:padding="8dp" >
+
+        <TextView
+            android:id="@+id/label_speed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:labelFor="@+id/label_speed"
+            android:text="@string/status_textview_speed"
+            android:textColor="@color/dark"
+            android:textSize="32sp" />
+
+        <TextView
+            android:id="@+id/status_speed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 h/s"
+            android:textColor="@color/green"
+            android:textSize="32sp"
+            tools:ignore="HardcodedText" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/second_box"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/speedbox"
+        android:background="@color/bright"
+        android:layout_marginRight="16dp"
+        android:padding="8dp" >
+
+        <View
+            android:id="@+id/separator"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="5dp"
+            android:layout_toRightOf="@+id/label_accepted" />
+
+        <TextView
+            android:id="@+id/label_accepted"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:labelFor="@+id/status_accepted"
+            android:text="@string/accepted"
+            android:textColor="@color/dark" />
+
+        <TextView
+            android:id="@+id/status_accepted"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/label_accepted"
+            android:layout_alignLeft="@+id/status_speed"
+            android:layout_toRightOf="@+id/separator"
+            android:text="0"
+            android:textColor="@color/green"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/label_rejected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/label_accepted"
+            android:labelFor="@+id/status_rejected"
+            android:text="@string/rejected"
+            android:textColor="@color/dark" />
+
+        <TextView
+            android:id="@+id/status_rejected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/label_rejected"
+            android:layout_alignLeft="@+id/status_speed"
+            android:layout_toRightOf="@+id/separator"
+            android:text="0"
+            android:textColor="@color/green"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/label_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/label_rejected"
+            android:labelFor="@+id/status_text"
+            android:text="@string/status"
+            android:textColor="@color/dark" />
+
+        <TextView
+            android:id="@+id/status_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/label_status"
+            android:layout_alignLeft="@+id/status_speed"
+            android:layout_toRightOf="@+id/separator"
+            android:text="@string/unknown"
+            android:textColor="@color/green" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/status_console"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/speedbox"
+        android:layout_toRightOf="@+id/second_box"
+        android:background="@color/black"
+        android:padding="4dp"
+        android:text="..."
+        android:textColor="@color/darkblue"
+        android:textIsSelectable="true"
+        android:textSize="12sp"
+        android:typeface="monospace"
+        tools:ignore="HardcodedText" />
+
+</RelativeLayout>

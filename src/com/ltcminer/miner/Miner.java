@@ -1,11 +1,6 @@
 package com.ltcminer.miner;
 import java.net.MalformedURLException;
-import com.ltcminer.miner.MainActivity;
-import com.ltcminer.miner.Console;
 import java.net.URL;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -13,7 +8,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
-import com.ltcminer.miner.R;
 
 public class Miner implements Observer {
 	private static final long DEFAULT_SCAN_TIME = 5000;
