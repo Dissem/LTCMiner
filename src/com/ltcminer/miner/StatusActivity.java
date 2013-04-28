@@ -53,6 +53,8 @@ public class StatusActivity extends MainActivity {
 		public void run() {
 			// Log.i("LC", "StatusActivity:updateStatus");
 			TextView txt_status = (TextView) findViewById(R.id.status_text);
+			if (!mService.status.equals(txt_status.getText()))
+				invalidateOptionsMenu();
 			txt_status.setText(mService.status);
 		}
 	};
@@ -69,8 +71,6 @@ public class StatusActivity extends MainActivity {
 					Log.i("LC", "StatusActivity:updateThread: Interrupted");
 				}
 			}
-
-			invalidateOptionsMenu();
 
 			while (mBound == true) {
 				try {
@@ -92,33 +92,29 @@ public class StatusActivity extends MainActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		SharedPreferences settings = getSharedPreferences(PREF_TITLE, 0);
 		setContentView(R.layout.activity_status);
 		Log.i("LC", "Status: onCreate");
 
 		Intent intent = new Intent(getApplicationContext(), MinerService.class);
 		startService(intent);
-		bindService(intent, super.mConnection, Context.BIND_AUTO_CREATE);
+		bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
 
 		updateThread.start();
-
-		// Launch news on first run
-		if (settings.getBoolean(PREF_NEWS_RUN_ONCE, false) == false) {
-			intent = new Intent(getApplicationContext(), SettingsActivity.class);
-			startActivity(intent);
-		}
 	}
 
 	@Override
-	protected void onPause() {
-		// TODO Auto-generated method stub
+	protected void onResume() {
+		super.onResume();
 
-		super.onPause();
+		// SharedPreferences settings = getSharedPreferences(PREF_TITLE, 0);
+		// // Launch news on first run
+		// if (settings.getBoolean(PREF_NEWS_RUN_ONCE, false) == false) {
+		// startActivity(new Intent(this, SettingsActivity.class));
+		// }
 	}
 
 	@Override
 	protected void onStop() {
-		// TODO Auto-generated method stub
 		if (updateThread.isAlive() == true) {
 			updateThread.interrupt();
 		}

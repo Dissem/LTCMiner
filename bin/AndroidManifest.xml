@@ -16,16 +16,12 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name" >
         <activity
-            android:name="MainActivity"
-            android:screenOrientation="portrait" >
-        </activity>
-        <activity
             android:name="SettingsActivity"
             android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="StatusActivity"
-            android:screenOrientation="portrait" >
+            android:launchMode="singleInstance" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

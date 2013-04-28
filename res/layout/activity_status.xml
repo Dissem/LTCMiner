@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:layout_marginRight="16dp"
-        android:background="@color/silver"
+        android:background="@drawable/info_box"
         android:orientation="vertical"
         android:padding="8dp" >
 
@@ -22,7 +22,6 @@
             android:layout_height="wrap_content"
             android:labelFor="@+id/label_speed"
             android:text="@string/status_textview_speed"
-            android:textColor="@color/dark"
             android:textSize="32sp" />
 
         <TextView
@@ -30,7 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0 h/s"
-            android:textColor="@color/green"
+            android:textColor="@color/gold"
             android:textSize="32sp"
             tools:ignore="HardcodedText" />
     </LinearLayout>
@@ -43,7 +42,7 @@
         android:layout_alignRight="@+id/status_console"
         android:layout_alignTop="@+id/speedbox"
         android:layout_toRightOf="@+id/speedbox"
-        android:background="@color/bright"
+        android:background="@drawable/info_box"
         android:padding="8dp" >
 
         <View
@@ -58,8 +57,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:labelFor="@+id/status_accepted"
-            android:text="@string/accepted"
-            android:textColor="@color/dark" />
+            android:text="@string/accepted" />
 
         <TextView
             android:id="@+id/status_accepted"
@@ -69,7 +67,7 @@
             android:layout_alignLeft="@+id/status_speed"
             android:layout_toRightOf="@+id/separator"
             android:text="0"
-            android:textColor="@color/green"
+            android:textColor="@color/gold"
             tools:ignore="HardcodedText" />
 
         <TextView
@@ -78,8 +76,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/label_accepted"
             android:labelFor="@+id/status_rejected"
-            android:text="@string/rejected"
-            android:textColor="@color/dark" />
+            android:text="@string/rejected" />
 
         <TextView
             android:id="@+id/status_rejected"
@@ -89,7 +86,7 @@
             android:layout_alignLeft="@+id/status_speed"
             android:layout_toRightOf="@+id/separator"
             android:text="0"
-            android:textColor="@color/green"
+            android:textColor="@color/gold"
             tools:ignore="HardcodedText" />
 
         <TextView
@@ -98,8 +95,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/label_rejected"
             android:labelFor="@+id/status_text"
-            android:text="@string/status"
-            android:textColor="@color/dark" />
+            android:text="@string/status" />
 
         <TextView
             android:id="@+id/status_text"
@@ -109,7 +105,7 @@
             android:layout_alignLeft="@+id/status_speed"
             android:layout_toRightOf="@+id/separator"
             android:text="@string/unknown"
-            android:textColor="@color/green" />
+            android:textColor="@color/gold" />
     </RelativeLayout>
 
     <TextView

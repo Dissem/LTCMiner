@@ -24,6 +24,7 @@ public class MainActivity extends Activity implements Constants {
 			Log.i("LC", "Main: onServiceConnected()");
 			LocalBinder binder = (LocalBinder) service;
 			mService = binder.getService();
+			invalidateOptionsMenu();
 			mBound = true;
 			Log.i("LC", "Main: Service Connected");
 		}
@@ -58,9 +59,18 @@ public class MainActivity extends Activity implements Constants {
 
 	@Override
 	public boolean onPrepareOptionsMenu(Menu menu) {
-		boolean running = mService.running;
-		menu.findItem(R.id.menu_start).setVisible(!running);
-		menu.findItem(R.id.menu_stop).setVisible(running);
+		MenuItem start = menu.findItem(R.id.menu_start);
+		MenuItem stop = menu.findItem(R.id.menu_stop);
+		if (mService == null) {
+			start.setVisible(true);
+			start.setEnabled(false);
+			stop.setVisible(false);
+		} else {
+			boolean running = mService.running;
+			start.setVisible(!running);
+			start.setEnabled(true);
+			stop.setVisible(running);
+		}
 		return super.onPrepareOptionsMenu(menu);
 	}
 
